@@ -15,7 +15,7 @@ class Program;
             Console.WriteLine("3. Withdraw");
             Console.WriteLine("4. Exit");
             Console.WriteLine("\n");
-            Console.WriteLine("Enter your choice:")
+            Console.WriteLine("Enter your choice:");
             choice = int.Parse(Console.ReadLine());
             switch(choice)
             {
