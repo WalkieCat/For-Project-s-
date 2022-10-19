@@ -1,2 +1,2 @@
 # ATM-machine
-For project purpose
+A simple terminal-based ATM machine
