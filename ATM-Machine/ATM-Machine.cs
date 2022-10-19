@@ -20,7 +20,7 @@ namespace atm_machine
         private static void Main()
         {
             Console.WriteLine("Welcome to a simple ATM Machine");
-            Console.WriteLine("Options;");
+            Console.WriteLine("Options:");
             Console.WriteLine("\t1. Create Account On c# Bank");
             Console.WriteLine("\t2. Log In Your Existing Account");
             Console.WriteLine("\t3. Shutdown System");
