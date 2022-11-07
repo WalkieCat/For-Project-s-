@@ -49,6 +49,14 @@ namespace atm_machine
             var random = new Random();
             Console.Write("Name And Surname> ");
             var user = Console.ReadLine();
+            if (!Regex.Match(user, "^[A-Z][a-zA-Z_ ]*$").Success)
+            {
+                Console.WriteLine("Invalid name. Please try again");
+                Console.WriteLine("Press enter to contineue");
+                Console.ReadLine();
+                Console.Clear();
+                Main();
+            }
 
             var accountId = new string(Enumerable.Repeat("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", 12)
                 .Select(s => s[random.Next(s.Length)]).ToArray());
@@ -98,11 +106,22 @@ namespace atm_machine
                                     Console.WriteLine($"Depositing {input} To Account...");
                                     if (decimal.TryParse(input, out var deposit))
                                     {
+                                         if (deposit < 0)
+                                        {
+                                            Console.WriteLine("ERROR! Please enter a valid amount");
+                                            Console.ReadLine();
+                                            break;
+                                        }
+                                        else
+                                        { 
+                                            account.Balance += deposit;
+                                            Console.WriteLine($"New Balance: {account.Balance}");
+                                            break;
+                                        }
                                         account.Balance += deposit;
                                         Console.WriteLine($"New Balance: {account.Balance}");
                                         break;
                                     }
-
                                     Console.Clear();
                                     Console.WriteLine("Error: Please Specify Quantity For Deposit...");
                                     break;
