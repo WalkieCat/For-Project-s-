@@ -22,7 +22,7 @@ namespace atm_machine
         {
             Console.WriteLine("Welcome to a simple ATM Machine");
             Console.WriteLine("Options:");
-            Console.WriteLine("\t1. Create Account On c# Bank");
+            Console.WriteLine("\t1. Create Account");
             Console.WriteLine("\t2. Log In Your Existing Account");
             Console.WriteLine("\t3. Shutdown System");
             Console.Write("Select Operation> ");
@@ -53,7 +53,7 @@ namespace atm_machine
             if (!Regex.Match(user, "^[A-Z][a-zA-Z_ ]*$").Success)
             {
                 Console.WriteLine("Invalid name. Please try again");
-                Console.WriteLine("Press enter to contineue");
+                Console.WriteLine("Press enter to continue");
                 Console.ReadLine();
                 Console.Clear();
                 Main();
@@ -86,7 +86,7 @@ namespace atm_machine
                         var atmModeShouldClose = false;
                         while (!atmModeShouldClose)
                         {
-                            Console.WriteLine("Options;");
+                            Console.WriteLine("Options:");
                             Console.WriteLine("\t1. View Balance");
                             Console.WriteLine("\t2. Deposit Money");
                             Console.WriteLine("\t3. Withdraw Money");
